@@ -36,7 +36,7 @@ To use **yt-dlp-gui**, follow these steps:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/yt-dlp-gui.git
+   git clone https://github.com/abdurrehman0206/yt-dlp-gui.git
    
 2. **Navigate to the project directory**:
 
