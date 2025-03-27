@@ -2,7 +2,9 @@
 
 **yt-dlp-gui** is a graphical user interface (GUI) for the powerful `yt-dlp` command-line tool, designed to help you easily download videos, audio, and playlists from YouTube and other video-sharing platforms. With a sleek and modern interface, you can easily customize video quality, format, output directory, and more, all without typing any complex commands.
 
-<img src="./assets/icon.png" width=32 height=32 />
+<p align="center">
+    <img src="./assets/icon.png" width=32 height=32  alt="yt-dlp-gui" />
+</p>
 
 ## Features
 

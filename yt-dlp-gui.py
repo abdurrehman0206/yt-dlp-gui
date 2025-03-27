@@ -6,7 +6,7 @@ from typing import Dict, Any
 import os
 from datetime import datetime
 import webbrowser
-
+import sys
 class ModernButton(ttk.Button):
     def __init__(self, master=None, **kwargs):
         super().__init__(master, **kwargs)
@@ -26,7 +26,17 @@ class YTDLPGui(tk.Tk):
         self.title("YT-DLP-GUI")
         self.geometry("500x600")
         self.resizable(False, False)
-        self.iconphoto(True, tk.PhotoImage(file="./assets/icon.png"))
+        # self.iconphoto(True, tk.PhotoImage(file="./assets/icon.png"))
+        
+        if getattr(sys, 'frozen', False):
+        # If running as a bundled exe
+            icon_path = os.path.join(sys._MEIPASS, 'assets', 'icon.png')
+        else:
+        # If running as a script
+            icon_path = './assets/icon.png'
+
+        # Load the icon
+        self.iconphoto(True, tk.PhotoImage(file=icon_path))
         # Configure style
         self.style = ttk.Style()
         self.style.configure("TButton", padding=6, font=('Helvetica', 10))
@@ -108,7 +118,7 @@ class YTDLPGui(tk.Tk):
         
         ttk.Label(output_frame, text="Save to:").pack(side="left")
         self.output_dir = ttk.Entry(output_frame)
-        self.output_dir.insert(0, os.path.expanduser("~/Downloads"))
+        self.output_dir.insert(0, os.path.expanduser("~\Downloads"))
         self.output_dir.pack(side="left", padx=(10, 5), fill="x", expand=True)
         
         browse_btn = ModernButton(output_frame, text="Browse", command=self.browse_directory)
